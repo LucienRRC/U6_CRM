@@ -1,0 +1,36 @@
+<article class="box customer-card">
+  <div class="media">
+    <div class="media-left">
+      <figure class="image is-96x96">
+        <% if customer.image.attached? %>
+          <%= image_tag customer.image, alt: "#{customer.full_name} profile image", class: "is-rounded" %>
+        <% else %>
+          <%= image_tag "icon.svg", alt: "Default customer profile image", class: "is-rounded" %>
+        <% end %>
+      </figure>
+    </div>
+
+    <div class="media-content">
+      <div class="content">
+        <h3 class="title is-4"><%= customer.full_name %></h3>
+
+        <p>
+          <strong>Phone:</strong>
+          <%= customer.phone_number.presence || "No phone number provided" %>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <%= customer.email_address.presence || "No email address provided" %>
+        </p>
+
+        <% if customer.notes.present? %>
+          <div class="customer-notes">
+            <strong>Notes:</strong>
+            <%= simple_format(customer.notes) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</article>
