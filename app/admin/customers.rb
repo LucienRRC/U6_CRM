@@ -1,4 +1,6 @@
 ActiveAdmin.register Customer do
+  config.filters = false
+
   permit_params :full_name, :phone_number, :email_address, :notes, :image
 
   index do
@@ -13,11 +15,6 @@ ActiveAdmin.register Customer do
     column :created_at
     actions
   end
-
-  filter :full_name
-  filter :phone_number
-  filter :email_address
-  filter :created_at
 
   show do
     attributes_table do
