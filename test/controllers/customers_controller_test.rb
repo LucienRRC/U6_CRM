@@ -5,4 +5,9 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
     get customers_url
     assert_response :success
   end
+
+  test "should get alphabetized" do
+    get alphabetized_customers_url
+    assert_response :success
+  end
 end

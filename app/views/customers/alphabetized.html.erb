@@ -1,0 +1,11 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">Customers A-Z</h1>
+
+    <% if @customers.any? %>
+      <%= render @customers %>
+    <% else %>
+      <p>No customers found.</p>
+    <% end %>
+  </div>
+</section>
