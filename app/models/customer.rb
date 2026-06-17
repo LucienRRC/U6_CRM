@@ -5,4 +5,8 @@ class Customer < ApplicationRecord
   validates :email_address,
     format: { with: URI::MailTo::EMAIL_REGEXP },
     allow_blank: true
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[created_at email_address full_name id notes phone_number updated_at]
+  end
 end
