@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :customers, only: :index
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: redirect("/admin")

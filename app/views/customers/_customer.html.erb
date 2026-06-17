@@ -5,7 +5,7 @@
         <% if customer.image.attached? %>
           <%= image_tag customer.image, alt: "#{customer.full_name} profile image", class: "is-rounded" %>
         <% else %>
-          <%= image_tag "icon.svg", alt: "Default customer profile image", class: "is-rounded" %>
+          <%= image_tag "/icon.svg", alt: "Default customer profile image", class: "is-rounded" %>
         <% end %>
       </figure>
     </div>
