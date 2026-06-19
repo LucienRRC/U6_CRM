@@ -10,4 +10,9 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
     get alphabetized_customers_url
     assert_response :success
   end
+
+  test "should get missing email" do
+    get missing_email_customers_url
+    assert_response :success
+  end
 end
