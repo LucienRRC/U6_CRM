@@ -2,6 +2,12 @@
   <div class="container">
     <h1 class="title">Customers A-Z</h1>
 
+    <nav class="buttons">
+      <%= link_to "All Customers", root_path, class: "button" %>
+      <%= link_to "Missing Email", missing_email_customers_path, class: "button" %>
+      <%= link_to "Alphabetized", alphabetized_customers_path, class: "button is-link" %>
+    </nav>
+
     <% if @customers.any? %>
       <%= render @customers %>
     <% else %>
